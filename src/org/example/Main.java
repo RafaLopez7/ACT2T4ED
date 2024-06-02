@@ -1,8 +1,7 @@
 package org.example;
 import java.util.Collection;
 import java.util.Iterator;
-// Importamos los paquetes.
-// Hecho por Rafael Lopez Gonzalez
+
 
 public class Main {
 
@@ -14,10 +13,10 @@ public class Main {
         private boolean disponible = false;
 
         public Asignatura(long id, String nombre, int horas, int creditos, boolean disponible) {
-            extracted(id, nombre, horas, creditos, disponible);  // Datos que componen la clase asignatura.
+            extracted(id, nombre, horas, creditos, disponible);
         }
 
-        public void extracted(long id, String nombre, int horas, int creditos, boolean disponible) { // Extraccion del metodo
+        public void extracted(long id, String nombre, int horas, int creditos, boolean disponible) {
             this.id = id;
             this.nombre = nombre;
             this.horas = horas;
@@ -26,8 +25,7 @@ public class Main {
         }
     }
 
-    public class Matricula {  // Clase Matricula
-        // Datos que componen la clase Matricula.
+    public class Matricula {
         public long id = 0;
         private String nombre = "";
         private String apellidos = "";
@@ -39,7 +37,7 @@ public class Main {
         }
 
         public Matricula(long id, String nombre, String apellidos, String dni, int curso, Collection asignaturas) {
-            extracted(id, nombre, apellidos, dni, curso, asignaturas); // Datos que componen la clase Matricula.
+            extracted(id, nombre, apellidos, dni, curso, asignaturas);
         }
 
         public void extracted(long id, String nombre, String apellidos, String dni, int curso, Collection asignaturas) { // Extraccion del metodo
@@ -51,7 +49,7 @@ public class Main {
             this.asignaturas = asignaturas;
         }
 
-        public float costeMatricula() { // Funcion coste matricula.
+        public float costeMatricula() {
 
             float coste = 0;
             int creditos = 0;
@@ -64,11 +62,11 @@ public class Main {
             for (Iterator iter = asignaturas.iterator(); iter.hasNext(); ) {
                 Asignatura elemento = (Asignatura) iter.next();
                 creditos = creditos + elemento.creditos;
-                // Datos para calcular el coste de la matricula
+
             }
 
             coste = creditos * 15;
-            return coste; // Cuanto cuesta la matricula
+            return coste; 
         }
     }
 }
